@@ -1,12 +1,15 @@
 import matplotlib.pyplot as plt
 
+is_recorde_weight = input("Do you want to record a new weight? (y/n): ").lower() == 'y'
 print("Tracker started")
-wx = input("Enter your weight: ")
 
-# Gewicht speichern
-with open("weights.txt", "a") as f:
-    f.write(f"{wx}\n")
-print("Weight recorded.")
+if is_recorde_weight:
+    wx = input("Enter your weight: ")
+
+    # Gewicht speichern
+    with open("weights.txt", "a") as f:
+        f.write(f"{wx}\n")
+    print("Weight recorded.")
 
 # Werte einlesen
 with open("weights.txt", "r") as file:
